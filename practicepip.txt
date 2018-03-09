@@ -1,0 +1,39 @@
+pip install Django==1.11.9
+
+installs pip module Django version 1.11.9
+
+pip list
+
+list installed packages.
+
+pip install Django==1.11.9
+
+does nothing since it's been installed already.
+
+pip freeze
+
+does the same thing as pip list but doesn't list anything pip requires or depend on.
+
+cd ~/Desktop
+
+take you to desktop
+
+pip freeze > requirements.txt
+
+makes a .txt file with the list of programs generated from pip freeze.
+
+ls
+
+you can see all the files in the directory and notice that requirements.txt file exists now with the list from pip freeze.
+
+pip uninstall Django
+
+uninstalls the Django module
+
+pip show Django
+
+can't locate Django, won't do anything.
+
+pip search Flask
+
+lists all functions available. The versions of the functions are listed as well.

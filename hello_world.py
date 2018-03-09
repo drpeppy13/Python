@@ -1,11 +1,7 @@
-print " Hello World! "
-
 myDictionary = {
-    "name":"Gerso",
-    "position":"student",
-    "hobby":"coding"
+"name":"Kyle",
+"hobby":"coding",
 }
-print myDictionary["position"]
-myDictionary["position"] = "Coding Master"
-print myDictionary
+print 'Hi My name is ' + myDictionary
+
 
