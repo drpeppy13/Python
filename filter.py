@@ -12,4 +12,24 @@ mL = [3,5,7,34,3,2,113,65,8,89]
 lL = [4,34,22,68,9,13,3,5,7,9,2,12,45,923]
 eL = []
 spL = ['name','address','phone number','social security number']
-print type("0.123124")
+
+x = eS
+f = type(x)
+if f is int:
+    if f >= 100:
+        print "That's a big number!"
+    else:
+        print "That's a small number!"
+elif f is str:
+    if len(f) >= 50:
+        print "Long sentence"
+    elif len(f) == 0:
+        print "Short sentence"
+    else:
+        print "Short sentence"
+elif isinstance(f, list):
+    if len(f) >= 10:
+        print "Long list"
+    else:
+        print "Short List"
+print f
