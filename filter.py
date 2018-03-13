@@ -20,11 +20,9 @@ if f is int:
         print "That's a big number!"
     else:
         print "That's a small number!"
-elif f is str:
+elif isinstance(f,str):
     if len(f) >= 50:
         print "Long sentence"
-    elif len(f) == 0:
-        print "Short sentence"
     else:
         print "Short sentence"
 elif isinstance(f, list):
