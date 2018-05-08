@@ -12,22 +12,21 @@ mL = [3,5,7,34,3,2,113,65,8,89]
 lL = [4,34,22,68,9,13,3,5,7,9,2,12,45,923]
 eL = []
 spL = ['name','address','phone number','social security number']
-
-x = eS
-f = type(x)
-if f is int:
-    if f >= 100:
+ 
+current_tester = eS
+current_type = type(current_tester)
+if current_type is int:
+    if current_tester >= 100:
         print "That's a big number!"
     else:
         print "That's a small number!"
-elif isinstance(f,str):
-    if len(f) >= 50:
-        print "Long sentence"
+elif current_type is str:
+    if len(current_tester) >= 5:
+        print "Long sentence!"
     else:
-        print "Short sentence"
-elif isinstance(f, list):
-    if len(f) >= 10:
-        print "Long list"
+        print "Short sentence!"
+elif current_type is list:
+    if len(current_tester) >= 5:
+        print "That's a Long list!"
     else:
-        print "Short List"
-print f
+        print "What a s Short List!"
