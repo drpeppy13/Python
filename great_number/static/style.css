@@ -1,0 +1,14 @@
+.container{
+    width: 800px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
+}

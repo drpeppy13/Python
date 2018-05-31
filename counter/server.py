@@ -8,19 +8,19 @@ def index():
         session["num"] = 1
     else:
         session["num"] += 1
-    if user in session
-        session["users"].append({"name":"a new user", "favorite_number":5})
-    else:
-        session["users"] = [{"name":"minh", "favorite "}]
+    # if "users" in session:
+    #     session["users"].append({"name":"a new user", "favorite_number":5})
+    # else:
+    #     session["users"] = [{"name":"minh", "favorite_number":10}]
     
-    return render_template("index.html", times=session["num"], myUsers=session["users"])
+    return render_template("index.html", num=session["num"], users=session["users"])
 
-@app.route("/add_num")
+@app.route("/add_num", methods=["POST"])
 def add_num():
-    session["num"] += 1
+    session["num"] += 2
     return redirect("/")
 
-@app.route("/clear")
+@app.route("/clear", methods=["POST"])
 def clear():
     session.clear()
     return redirect("/")
