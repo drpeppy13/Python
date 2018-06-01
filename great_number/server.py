@@ -6,7 +6,7 @@ app.secret_key = "asdf"
 @app.route('/')
 def index():
     if 'num' not in session: 
-        session['num'] = random.randrange(0, 101)
+        session['num'] = random.randrange(1, 101)
         num = session['num']
         print num
     
@@ -14,25 +14,31 @@ def index():
 
 @app.route('/guess', methods=["POST"])
 def guess():
-    c = ""
-    # Coudn't get this function to work (display message if guess not int)
-    # if isinstance(request.form('guess'), (int, long)):
-    #     session['result'] = 'Input must be a number between 1-100'
-    #     c = "red"
+    # try:
+    #     guess = int(request.form['guess'])
+    #     if guess == int: 
+
+    #     # print type(request.form['guess'])
+
+    # # Coudn't get this function to work (display message if guess not int)
+    # # if isinstance(request.form('guess'), (int, long)):
+    # #     session['result'] = 'Input must be a number between 1-100'
+    # #     c = "red"
 
     if session['num'] == int(request.form['guess']):
         session['result'] = 'Correct'
         c = "green"
+        button = "show"
     
     elif session['num'] < int(request.form['guess']):
         session['result'] = 'Too High!'
         c = "red"
 
-    else:
+    elif session['num'] > int(request.form['guess']):
         session['result'] = 'Too Low!'
         c = "red"
 
-    return redirect('/')
+    return render_template('index.html', c=c)
 
 @app.route('/reset')
 def reset():
