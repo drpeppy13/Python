@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/belt/style.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header"></div>
+            <a href='/dashboard'>Home</a>
+            <a href='/logout'>Logout</a>
+        </div>
+        <div class="add_trip">
+            <h1>Add a Trip:</h1>
+            <form action='/travels/add' method="POST">
+                {% csrf_token %}
+                Destination: <input type="text" name="destination">
+                Description: <input type="text" name="description">
+                Travel Date From: <input type="date" name="trip_startdate">
+                Travle Date To: <input type="date" name="trip_enddate">
+                <input type="submit" value="Add" name="submit">
+            </form>
+        </div>
+        <div class="messages">
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.line{
+    text-align: center;
+    border-style: dotted;
+    border-wdith: 1px;
+}
+
+h1{
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}

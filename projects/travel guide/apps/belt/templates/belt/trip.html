@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/belt/style.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <a href='/travels'>Home</a>
+        <a href='/logout'>Logout</a>
+        <div class="trip">
+            <h1>{{trip.destination}}</h1>
+            <p>Planned by: {{trip.creator.name}}</p>
+            <p>Description: {{trip.description}}</p>
+            <p>Travel Date From: {{trip.trip_startdate}}</p>
+            <p>Travel Date To: {{trip.trip_enddate}}</p>
+        </div>
+        <div clas="companions">
+            <h1>Other users joining the trip:</h1>
+            {% for user in trip_users %}
+                <p>{{user.name}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

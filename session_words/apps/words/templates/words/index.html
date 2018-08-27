@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>session_words</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/words/style.css" />
+    <script src="main.js"></script>
+</head> 
+<body>
+    <form action="/session_words/process" method="post">
+        {% csrf_token %}
+        <label>
+            Add a new word <input type="text" name="new_word">
+        </label>
+        <label>
+            Choose color 
+            <select>
+                <option name="Red">Red</option>
+                <option name="Green">Green</option>
+                <option name="Blue">Blue</option>
+            </select>
+        </label>
+        <label>
+            <input type="checkbox" name="big_font" value="big"> Show in BIG fonts
+        </label>
+        <input type="submit" value="Add to session" class="button">
+    </form>
+    <a href="/session_words/clear" class="button">Session CLEAR!</a>
+    {% for word in request.session.words }
+        {{{word.word}}} - added on {{word.time}}
+    {% endfor %}
+</body>
+</html>

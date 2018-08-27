@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/belt/style.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="welcome">
+            {% if messages %}
+                {% for x in messages %}
+                    <h1>{{x}}</h1>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="travel_plan">
+            <h2>Your Trip Schedules:</h2>
+            <table>
+                <thead>
+                    <th>Destination</th>
+                    <th>Travel Start Date</th>
+                    <th>Travel End Date</th>
+                    <th>Description</th>
+                </thead>
+                {% for trip in trips %}
+                    <tr>
+                        <td><a href='/travels/destination/{{trip.id}}'>{{trip.destination}}</a></td>
+                        <td>{{trip.trip_startdate}}</td>
+                        <td>{{trip.trip_enddate}}</td>
+                        <td>{{trip.description}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="others_travel_plan">
+            <h2>Other Users' Travel Plans: </h2>
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Destination</th>
+                    <th>Travel Start Date</th>
+                    <th>Travel End Date</th>
+                    <th>Do you want to Join?</th>
+                </thead>
+                {% for others_trip in others_trips.all %}
+                    <tr>
+                        <td>{{others_trip.creator}}</td>
+                        <td><a href='travels/destination/{{others_trip.id}}'>{{others_trip.destination}}</a></td>
+                        <td>{{others_trip.trip_startdate}}</td>
+                        <td>{{others_trip.trip_enddate}}</td>
+                        <td><a href='travels/destination/join/{{others_trip.id}}'>Join Trip</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <a href='/travels/create'>Create Trip</a>
+    </div>
+</body>
+</html>

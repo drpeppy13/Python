@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wish Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/wish/style.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <a href='/dashboard'>Home</a>
+        <a href='/logout'>Logout</a>
+        <div class="wish">
+            <h1>{{wish.item_name}}</h1>
+        </div>
+        <div clas="wish_users">
+                <h1>Users who added this product/item under their wish list:</h1>
+                {% for user in wish_users %}
+                    <p>{{user.name}}</p>
+                {% endfor %}
+                    <p>{{wish.creator.name}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

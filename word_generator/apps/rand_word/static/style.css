@@ -1,0 +1,16 @@
+p{
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.line{
+    text-align: center;
+    border-style: dotted;
+    border-width: 1px;
+}
+
+.button{
+    text-align: center;
+    background-color: red;
+}
